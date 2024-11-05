@@ -118,7 +118,7 @@ const Backup = async () => {
     Plugins.message.update(id, '正在备份...', 'info')
     const dav = new WebDAV(Plugin.Address, Plugin.Username, Plugin.Password)
     await dav.put(
-      Plugin.DataPath + '/' + getPrefix() + '_' + Plugins.formatDate(Date.now(), 'YYYYMMDDHHmmss') + '.json',
+      Plugin.DataPath + '/' + getPrefix() + '_' + Plugins.formatDate(Date.now(), 'YYYYMMDD') + '.json',
       JSON.stringify(filesMap)
     )
     Plugins.message.update(id, '备份完成', 'success')
